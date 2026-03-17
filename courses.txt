@@ -1,0 +1,2 @@
+CS101,B.Tech CSE Sem 1,First semester Computer Science,20
+CS102,B.Tech CSE Sem 2,Second semester Computer Science,18

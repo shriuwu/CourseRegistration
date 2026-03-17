@@ -1,0 +1,3 @@
+STU001,Rahul Sharma,rahul@email.com
+STU003,Arjun Das,arjun@email.com
+STU002,Priya Mehta,priya@email.com
