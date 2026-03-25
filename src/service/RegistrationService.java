@@ -122,4 +122,17 @@ public class RegistrationService {
     public Map<String, List<String>> getAllRegistrations() {
         return studentRegistrations;
     }
+
+    // POLYMORPHISM: Calls display() on each course — each prints differently
+    public void displayAllCourses() {
+        System.out.println("\n========== ALL REGISTERED COURSES ==========");
+        if (courseRegistry.isEmpty()) {
+            System.out.println("No courses available.");
+            return;
+        }
+        for (Course course : courseRegistry.values()) {
+            course.display("");
+            System.out.println();
+        }
+    }
 }
