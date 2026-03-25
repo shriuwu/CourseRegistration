@@ -85,6 +85,8 @@ public class Main {
         service.addStudent(s1);
         service.addStudent(s2);
         service.addStudent(s3);
+        Student s4 = new Student("STU004", "Srinistha Biswas", "biswassrinistha@gmail.com");
+        service.addStudent(s4);
 
         // ── Register Students ─────────────────────────────────────────────
         System.out.println("\n========== REGISTRATIONS ==========");
@@ -93,6 +95,10 @@ public class Main {
             service.register("STU001", "CS102");
             service.register("STU002", "CS101");
             service.register("STU001", "CS101"); // ← triggers AlreadyRegisteredException
+            service.register("STU003", "CS103");
+            service.register("STU004", "CS101");
+            service.register("STU004", "CS102");
+            service.register("STU004", "CS103");
         } catch (AlreadyRegisteredException e) {
             System.out.println("⚠️  Error: " + e.getMessage());
         } catch (CourseNotFoundException e) {
