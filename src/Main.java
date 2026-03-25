@@ -48,11 +48,29 @@ public class Main {
         Course course2 = new Course("CS102", "B.Tech CSE Sem 2",
                 "Second semester Computer Science", 18);
         course2.addModule(m3);
+        // New Course CS103 — Web Development
+        Lesson l7 = new Lesson("HTML & CSS",       "Web page structure and styling",  60);
+        Lesson l8 = new Lesson("JavaScript",       "Dynamic web programming",         90);
+        Lesson l9 = new Lesson("React Basics",     "Component-based UI development",  90);
+        Lesson l10 = new Lesson("Node.js",         "Server-side JavaScript",          75);
 
+        Module m4 = new Module("Frontend",  "Client-side web development");
+        m4.addComponent(l7);
+        m4.addComponent(l8);
+        m4.addComponent(l9);
+
+        Module m5 = new Module("Backend",   "Server-side web development");
+        m5.addComponent(l10);
+
+        Course course3 = new Course("CS103", "Web Development",
+                "Full stack web development fundamentals", 22);
+        course3.addModule(m4);
+        course3.addModule(m5);
         // Add courses to service
         service.addCourse(course1);
         service.addCourse(course2);
-
+        service.addCourse(course3);
+        
         // ── Display Course Structure ──────────────────────────────────────
         System.out.println("========== COURSE STRUCTURE ==========");
         course1.display("");
