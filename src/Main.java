@@ -85,7 +85,7 @@ public class Main {
         service.addStudent(s1);
         service.addStudent(s2);
         service.addStudent(s3);
-        Student s4 = new Student("STU004", "Srinistha Biswas", "biswassrinistha@gmail.com");
+        Student s4 = new Student("STU004", "Shri Agarwal", "shri@email.com");
         service.addStudent(s4);
 
         // ── Register Students ─────────────────────────────────────────────
@@ -130,7 +130,9 @@ public class Main {
         } catch (CourseNotFoundException e) {
             System.out.println("Error: " + e.getMessage());
         }
-
+       // ── Display all courses and students using new methods ────────────
+        service.displayAllCourses();
+        service.displayAllStudents();
         // ── Save all data to files (Data Persistence) ─────────────────────
         System.out.println("\n========== SAVING DATA ==========");
         DataStore.saveAll(service);
