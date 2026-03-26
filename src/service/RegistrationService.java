@@ -135,4 +135,15 @@ public class RegistrationService {
             System.out.println();
         }
     }
+    // COLLECTIONS: Iterates over all students using HashMap
+    public void displayAllStudents() {
+        System.out.println("\n========== ALL REGISTERED STUDENTS ==========");
+        if (studentRegistry.isEmpty()) {
+            System.out.println("No students found.");
+            return;
+        }
+        for (Student student : studentRegistry.values()) {
+            System.out.println("👤 " + student);
+        }
+    }
 }
