@@ -146,4 +146,24 @@ public class RegistrationService {
             System.out.println("👤 " + student);
         }
     }
+    // COLLECTIONS + EXCEPTION HANDLING: Calculate total credits for a student
+    public void getTotalCredits(String studentId) throws CourseNotFoundException {
+        Student student = studentRegistry.get(studentId);
+        if (student == null) {
+            System.out.println("Student not found: " + studentId);
+            return;
+        }
+
+        List<String> courses = studentRegistrations.getOrDefault(
+                studentId, new ArrayList<>());
+
+        int totalCredits = 0;
+        for (String code : courses) {
+            Course course = getCourse(code); // throws CourseNotFoundException
+            totalCredits += course.getCredits();
+        }
+
+        System.out.println("💳 Total credits for " + student.getName()
+                + " : " + totalCredits + " credits");
+    }
 }

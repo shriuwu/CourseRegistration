@@ -133,6 +133,16 @@ public class Main {
        // ── Display all courses and students using new methods ────────────
         service.displayAllCourses();
         service.displayAllStudents();
+        // ── Display total credits per student ─────────────────────────────
+        System.out.println("\n========== TOTAL CREDITS PER STUDENT ==========");
+        try {
+            service.getTotalCredits("STU001");
+            service.getTotalCredits("STU002");
+            service.getTotalCredits("STU003");
+            service.getTotalCredits("STU004");
+        } catch (CourseNotFoundException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
         // ── Save all data to files (Data Persistence) ─────────────────────
         System.out.println("\n========== SAVING DATA ==========");
         DataStore.saveAll(service);
